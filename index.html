@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>STORY · 雨庭文集</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-image: url('IMG_7030.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Courier New', 'Times New Roman', 'Georgia', serif;
+            color: #e8e6e0;
+            padding: 28px 18px 70px;
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 23, 0.6);
+            z-index: 0;
+        }
+        #rainCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .hero { text-align: center; margin: 20px 0 20px; padding: 20px 0 30px; }
+        .story-word {
+            font-family: 'Georgia', 'Times New Roman', cursive;
+            font-size: 68px;
+            font-weight: 400;
+            letter-spacing: 8px;
+            color: #e3dac9;
+            text-shadow: 0 0 6px rgba(227,218,201,0.3);
+            position: relative;
+            display: inline-block;
+        }
+        .story-word::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 74px;
+            left: 0;
+            font-size: 68px;
+            letter-spacing: 8px;
+            color: rgba(227,218,201,0.18);
+            transform: scaleY(-0.55) translateY(10px);
+            z-index: -1;
+        }
+        .sub { font-size: 12px; letter-spacing: 3px; color: #8b8a7a; margin-top: 28px; font-style: italic; }
+        .date-line { text-align: right; font-size: 11px; color: #6a6e7c; border-bottom: 1px solid #232833; padding-bottom: 12px; margin-bottom: 28px; }
+        .name-bar { background: #0f141fcc; backdrop-filter: blur(4px); border: 1px solid #2f3645; border-radius: 24px; padding: 16px 18px; margin-bottom: 32px; }
+        .name-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 8px; }
+        .name-row:first-child { margin-top: 0; }
+        .name-row label { font-size: 12px; background: #1f2533; padding: 4px 14px; border-radius: 60px; color: #cbc6ae; min-width: 40px; text-align: center; }
+        .name-row input { flex: 1; background: #070b12; border: 1px solid #3d4457; padding: 8px 16px; color: #f0e7d4; font-family: monospace; font-size: 14px; border-radius: 40px; outline: none; }
+        .preview-name { margin-top: 12px; font-size: 12px; color: #b7a97c; text-align: center; border-top: 1px solid #2f3645; padding-top: 12px; }
+        .section { margin-bottom: 52px; }
+        .section-title { font-size: 28px; font-weight: 400; font-family: 'Georgia', serif; letter-spacing: 2px; color: #e2cf9c; border-left: 3px solid #c8b280; padding-left: 18px; margin-bottom: 28px; }
+        .story-link { display: block; padding: 14px 18px; margin-bottom: 8px; background: #0c111bcc; backdrop-filter: blur(2px); border-radius: 20px; border: 1px solid #282f3e; color: #f3efdf; text-decoration: none; font-size: 18px; transition: 0.2s; }
+        footer { text-align: center; margin-top: 56px; font-size: 10px; color: #50566b; border-top: 1px solid #202530; padding-top: 28px; }
+        @media (max-width: 550px) { .story-word { font-size: 48px; } .story-word::after { font-size: 48px; top: 52px; } .section-title { font-size: 24px; } }
+    </style>
+</head>
+<body>
+<canvas id="rainCanvas"></canvas>
+<div class="container">
+    <div class="hero"><div class="story-word" data-text="STORY">STORY</div><div class="sub">‖ 雨庭 · 残響 ‖</div></div>
+    <div class="date-line">'26.05.16  ·  离线雨境</div>
+    <div class="name-bar">
+        <div class="name-row"><label>姓</label><input type="text" id="firstName" placeholder="姓（如：江）" value="江"></div>
+        <div class="name-row"><label>名</label><input type="text" id="lastName" placeholder="名（如：穗）" value="穗"></div>
+        <div class="preview-name" id="previewName">当前主角：江穗</div>
+    </div>
+    <div class="section"><div class="section-title">✦ 我和你</div>
+        <a href="#" class="story-link" data-story="story1.html">《关于五条悟》</a>
+        <a href="#" class="story-link" data-story
