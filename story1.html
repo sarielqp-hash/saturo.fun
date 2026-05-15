@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>关于五条悟 · STORY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0a0e17;
+            font-family: 'Courier New', 'Times New Roman', 'Georgia', serif;
+            color: #e8e6e0;
+            padding: 28px 18px 70px;
+            min-height: 100vh;
+        }
+        #rainCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: #b7a97c;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .hero {
+            text-align: center;
+            margin: 10px 0 20px;
+            padding: 10px 0 20px;
+        }
+        .story-word {
+            font-family: 'Georgia', 'Times New Roman', cursive;
+            font-size: 48px;
+            font-weight: 400;
+            letter-spacing: 8px;
+            color: #e3dac9;
+            text-shadow: 0 0 6px rgba(227,218,201,0.3);
+            position: relative;
+            display: inline-block;
+        }
+        .story-word::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 52px;
+            left: 0;
+            font-size: 48px;
+            letter-spacing: 8px;
+            color: rgba(227,218,201,0.18);
+            transform: scaleY(-0.55) translateY(8px);
+            z-index: -1;
+        }
+        .sub {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #8b8a7a;
+            margin-top: 18px;
+        }
+        .title {
+            font-size: 28px;
+            text-align: center;
+            margin: 20px 0 28px;
+            color: #f0e7d4;
+            border-bottom: 1px solid #2f3645;
+            padding-bottom: 16px;
+        }
+        .name-bar {
+            background: #0f141fcc;
+            backdrop-filter: blur(4px);
+            border: 1px solid #2f3645;
+            border-radius: 44px;
+            padding: 10px 18px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        .name-bar label {
+            font-size: 12px;
+            background: #1f2533;
+            padding: 4px 14px;
+            border-radius: 60px;
+            color: #cbc6ae;
+        }
+        #nameInput {
+            flex: 1;
+            background: #070b12;
+            border: 1px solid #3d4457;
+            padding: 8px 16px;
+            color: #f0e7d4;
+            font-family: monospace;
+            font-size: 14px;
+            border-radius: 40px;
+            outline: none;
+        }
+        .story-content {
+            background: #0c111bcc;
+            backdrop-filter: blur(2px);
+            border-radius: 24px;
+            border: 1px solid #282f3e;
+            padding: 28px 24px;
+            line-height: 1.7;
+            font-size: 15px;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+        }
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            font-size: 10px;
+            color: #50566b;
+        }
+        @media (max-width: 550px) {
+            .story-word { font-size: 40px; }
+            .story-word::after { font-size: 40px; top: 44px; }
+            .title { font-size: 22px; }
+            .story-content { padding: 20px 18px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="rainCanvas"></canvas>
+
+<div class="container">
+    <a href="index.html" class="back-link">← 返回首页</a>
+    <div class="hero">
+        <div class="story-word" data-text="STORY">STORY</div>
+        <div class="sub">‖ 雨庭 · 残響 ‖</div>
+    </div>
+    <h1 class="title">《关于五条悟》</h1>
+
+    <div class="name-bar">
+        <label>✎ 主角名</label>
+        <input type="text" id="nameInput" placeholder="替换「江穗」" value="江穗">
+    </div>
+
+    <!-- 注意：这里用 <div> 并且 id 是 storyContainer，里面的内容是纯文本，方便 JS 替换 -->
+    <div class="story-content" id="storyContainer">走廊传来一阵脚步声，不用回头家入硝子也知道是谁——她认识的人中只有江穗会把短高跟踩出悠闲的调子，不紧不慢的，学生时代就一直这样呢。
+
+东京热的像蒸笼，即使在深山中的高专也躲不过这要命的高温，蝉鸣从早到晚不歇气，吵得人心烦意乱
+
+江穗手里拎着便利店的塑料袋，新咒术界的运转建立在无数这样不合理的日程之中，某天起江穗眼下那片淡淡的乌青再也没有消失过，硝子很清楚那不是单纯的失眠。
+
+“今年热的有些过分了吧，这和走在岩浆中有什么区别！”
+
+“再怎么说也瘦的太过了吧。”
+
+她闻言浅浅叹了口气，手随意的搭在桌子上
+
+“诶，其实我也知道，但是天气热的不行啦不然我们去居酒屋吧，叫上歌姬冥冥吧好久没有聚在一起喝酒了呢。”
+
+硝子想，她还是喜欢这样的她
+
+如果连江穗都消失了，还有谁会记得五条悟的存在呢
+
+江穗大概是不允许这种事发生的
+
+———————————————————————
+
+新宿决战的胜利来的仓促又荒谬
+
+大家庆祝，拥抱，这是所有人的努力。
+
+五条悟没有葬礼，放在之前是不可想象的。咒术界的最强，五条家主——这样的人死了，按理来说该有隆重的惦念，盛大的告别，无数人前来吊唁，无数人痛哭流涕。但什么都没有发生。
+
+也许最强不需要葬礼，他的遗体甚至开始被研究
+
+我在学校见到了虎杖他们，全都瘦了很多，眼睛里似乎多了不一样的东西
+
+他们安慰我，“五条老师会高兴的。”
+
+不该是这样的，悟的学生甚至没有为他哭一场
+
+最强没有葬礼，甚至连祭拜的碑墓都没有，大家该去哪里祭拜呢，他们找不到他的坟墓，他的灵位，哪怕一块刻着他名字的石头。
+
+五条悟这个人随着时间消散，新入学的学生们听着这个名字，像在听一个故事，一段传说，就像2000年前那些咒术师一样，强大，遥远，与己无关
+
+属于我的苦夏到来了
+
+———————————————————————
+
+我被困在“东京”这座城市
+
+不需要为建立咒术界而繁忙，拥有足够的时间来思念他。
+
+来到这里前我一直在寻找能见到他的魔法，地球横亘着数不清的漫长历史，岁月沉淀着无数尘封的典籍和秘闻，也许世间藏着一种密法，能够让我再见他一眼。
+
+我站在人群中，也许又是咒灵的幻境
+
+忽然间有人抓住了我的手，“呃，你怎么在这啊？”
+
+眼前人并没有穿着那身战斗服，而是换回了学生时期的校服，我知道那件深黑色制服里面还穿着一件黑色的衬衣
+
+是他
+
+真的是他
+
+他见我半天不说话，握住我手腕的手松了松：“不会吧，忘记我了吗，虽然我是希望你能把我忘了”
+
+“才不会，怎么可能会忘了你呢！悟你个笨蛋！”打断话语时眼泪流了下来，我阻止不了
+
+他闻言弯起眼，眼底漾开我熟悉的笑意
+
+“嘛，真是一点都没变呢”
+
+他自说自话牵起我的手，带着我向前走
+
+我想起回学校的路上，我们经常牵着彼此的手回去
+
+“这里是哪里，悟又为什么在这里，他们都说你要向南”
+
+有太多的话想说出口
+
+我们不要在这里，一起逃到18岁，躲在漫天飞舞樱花瓣中，不要被命运找到
+
+我却感觉胸口越来越沉重，闷的喘不过气，身旁的人停下了
+
+回应我的是他的唇，将我的话语，止不住泪水吞没
+
+我听见了一个声音在说：“还没有收到花呢，以后每年你都要送给我哦。”
+
+———————————————————————
+
+耳边有细微且平稳的机械声，我猛地睁开眼，看见病房的天花板
+
+嘴唇上仿佛还有吻过的灼热，我闭上眼睛，眼泪从两边流下
+
+
+我们不要在这里
+跟我逃到18岁
+不要被命运找到
+                ——简媜
+《夏恋》</div>
+    <footer>雨水浸透词语 · 名字即咒语</footer>
+</div>
+
+<script>
+    // 下雨效果
+    const canvas = document.getElementById('rainCanvas');
+    const ctx = canvas.getContext('2d');
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let raindrops = [];
+
+    function resizeCanvas() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
+
+    function initRain() {
+        const dropCount = Math.floor(width * 0.3);
+        raindrops = [];
+        for (let i = 0; i < dropCount; i++) {
+            raindrops.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                length: 8 + Math.random() * 12,
+                speed: 3 + Math.random() * 6
+            });
+        }
+    }
+
+    function drawRain() {
+        ctx.clearRect(0, 0, width, height);
+        ctx.strokeStyle = 'rgba(200, 210, 230, 0.25)';
+        ctx.lineWidth = 1;
+        for (let drop of raindrops) {
+            ctx.beginPath();
+            ctx.moveTo(drop.x, drop.y);
+            ctx.lineTo(drop.x, drop.y + drop.length);
+            ctx.stroke();
+            drop.y += drop.speed;
+            if (drop.y > height) {
+                drop.y = -drop.length;
+                drop.x = Math.random() * width;
+            }
+        }
+        requestAnimationFrame(drawRain);
+    }
+
+    window.addEventListener('resize', () => {
+        resizeCanvas();
+        initRain();
+    });
+    resizeCanvas();
+    initRain();
+    drawRain();
+
+    // 名字替换功能（修复版）
+    const nameInput = document.getElementById('nameInput');
+    const storyDiv = document.getElementById('storyContainer');
+    // 保存原始文本（注意：这里直接取 innerText 或者 innerHTML，为了避免丢失换行，我们取 innerHTML 但只替换文本？为了保险直接取 innerText 再替换，但是会丢失加粗等样式。
+    // 因为内容里没有 HTML 标签，所以用 innerText 没问题）
+    const originalText = storyDiv.innerText;
+
+    function replaceNames() {
+        let newName = nameInput.value.trim();
+        if (newName === "") newName = "江穗";
+        // 使用正则全局替换，避免只替换第一个
+        let replaced = originalText.replace(/江穗/g, newName);
+        storyDiv.innerText = replaced;
+    }
+    
+    nameInput.addEventListener('input', replaceNames);
+    replaceNames(); // 初始化替换一次，保证默认显示一致
+</script>
+</body>
+</html>
