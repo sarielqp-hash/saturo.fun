@@ -21,7 +21,6 @@
             min-height: 100vh;
             position: relative;
         }
-        /* 半透明遮罩，让文字更清楚 */
         body::before {
             content: '';
             position: fixed;
@@ -88,6 +87,37 @@
             padding-bottom: 12px;
             margin-bottom: 28px;
         }
+        /* 名字输入栏 */
+        .name-bar {
+            background: #0f141fcc;
+            backdrop-filter: blur(4px);
+            border: 1px solid #2f3645;
+            border-radius: 44px;
+            padding: 10px 18px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        .name-bar label {
+            font-size: 12px;
+            background: #1f2533;
+            padding: 4px 14px;
+            border-radius: 60px;
+            color: #cbc6ae;
+        }
+        #globalNameInput {
+            flex: 1;
+            background: #070b12;
+            border: 1px solid #3d4457;
+            padding: 8px 16px;
+            color: #f0e7d4;
+            font-family: monospace;
+            font-size: 14px;
+            border-radius: 40px;
+            outline: none;
+        }
         .section {
             margin-bottom: 52px;
         }
@@ -141,22 +171,29 @@
 
     <div class="date-line">'26.05.16  ·  离线雨境</div>
 
+    <!-- 全局名字输入框 -->
+    <div class="name-bar">
+        <label>✎ 主角名</label>
+        <input type="text" id="globalNameInput" placeholder="输入名字替换「江穗」" value="江穗">
+    </div>
+
     <div class="section">
         <div class="section-title">✦ 我和你</div>
-        <a href="story1.html" class="story-link">《关于五条悟》</a>
-        <a href="story2.html" class="story-link">《夏恋》</a>
+        <a href="#" class="story-link" data-story="story1.html">《关于五条悟》</a>
+        <a href="#" class="story-link" data-story="story2.html">《夏恋》</a>
     </div>
 
     <div class="section">
         <div class="section-title">✦ 给亲友的奏鸣曲</div>
-        <a href="story3.html" class="story-link">《Amireux》</a>
-        <a href="story4.html" class="story-link">《关于你》</a>
+        <a href="#" class="story-link" data-story="story3.html">《Amireux》</a>
+        <a href="#" class="story-link" data-story="story4.html">《关于你》</a>
     </div>
 
     <footer>雨水浸透词语 · 名字即咒语</footer>
 </div>
 
 <script>
+    // 下雨效果
     const canvas = document.getElementById('rainCanvas');
     const ctx = canvas.getContext('2d');
     let width = window.innerWidth;
@@ -208,6 +245,22 @@
     resizeCanvas();
     initRain();
     drawRain();
+
+    // 点击小说链接时，把名字带到 URL 参数里
+    const nameInput = document.getElementById('globalNameInput');
+    const links = document.querySelectorAll('.story-link');
+
+    function handleLinkClick(e) {
+        e.preventDefault();
+        const storyPage = this.getAttribute('data-story');
+        let name = nameInput.value.trim();
+        if (name === "") name = "江穗";
+        window.location.href = storyPage + '?name=' + encodeURIComponent(name);
+    }
+
+    links.forEach(link => {
+        link.addEventListener('click', handleLinkClick);
+    });
 </script>
 </body>
 </html>
