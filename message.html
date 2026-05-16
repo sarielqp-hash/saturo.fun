@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>留言 · 查看</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0, box-sizing: border-box; }
         html, body {
             width: 100%;
             min-height: 100%;
@@ -73,12 +73,21 @@
             border-top: 1px solid #202530;
             padding-top: 28px;
         }
-        #cusdis_thread { color: #e8e6e0 !important; }
-        .cusdis-textarea { background: #070b12cc !important; border:1px solid #3d4457 !important; color:#e8e6e0 !important; }
-        .cusdis-name-input::placeholder { content:"昵称 *（必填）" !important; color:#aaa; }
-        .cusdis-email-input::placeholder { content:"邮箱（选填，可不填）" !important; color:#aaa; }
-        .cusdis-textarea::placeholder { content:"写下你的留言 *（必填）" !important; color:#aaa; }
-        /* 弱化留言区，突出留言列表 */
+        #cusdis_thread { color: #ffffff !important; }
+        .cusdis-textarea { 
+            background: #070b12cc !important; 
+            border:1px solid #3d4457 !important; 
+            color:#ffffff !important;
+            resize: vertical !important;
+            overflow-y: auto !important;
+        }
+        .cusdis-name-input,
+        .cusdis-email-input {
+            color: #ffffff !important;
+        }
+        .cusdis-name-input::placeholder { color:#ffffff !important; }
+        .cusdis-email-input::placeholder { color:#ffffff !important; }
+        .cusdis-textarea::placeholder { color:#ffffff !important; }
         .cusdis-form {
             margin-top:40px;
             padding-top:20px;
