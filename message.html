@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>留言 · 关于·我们</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            width: 100%;
+            min-height: 100%;
+        }
+        body {
+            background-image: url('IMG_7030.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Courier New', 'Times New Roman', 'Georgia', serif;
+            color: #e8e6e0;
+            padding: 28px 18px 70px;
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 23, 0.6);
+            z-index: 0;
+        }
+        #snowCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .back-link{display:block;text-align:center;margin-bottom:30px;color:#e2cf9c;text-decoration:none;font-size:14px}
+        .section-title { font-size: 28px; font-weight: 400; font-family: 'Georgia', serif; letter-spacing: 2px; color: #e2cf9c; border-left: 3px solid #c8b280; padding-left: 18px; margin-bottom: 28px; }
+        footer { text-align: center; margin-top: 56px; font-size: 10px; color: #50566b; border-top: 1px solid #202530; padding-top: 28px; }
+        #cusdis_thread { color: #e8e6e0 !important; }
+        /* 彻底隐藏输入、回复、按钮 */
+        .cusdis-form-inner, .cusdis-reply-btn, .cusdis-submit-btn { display: none !important; }
+    </style>
+</head>
+<body>
+<canvas id="snowCanvas"></canvas>
+<div class="container">
+    <a href="index.html" class="back-link">← 返回主页</a>
+    <div class="section-title">✦ 所有留言与回复</div>
+    <div id="cusdis_thread"
+         data-host="https://cusdis.com"
+         data-app-id="1e28e436-d734-49fd-96c9-749f778cbe6d"
+         data-page-id="message"
+         data-page-url="https://sarielqp-hash.github.io/message.html"
+         data-page-title="留言查看">
+    </div>
+    <footer>我们的故事· 刚刚开始</footer>
+</div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+<script>
+    (function(){const e=document.getElementById("snowCanvas"),t=e.getContext("2d"),n=[],o=()=>{e.width=window.innerWidth,e.height=window.innerHeight,n.length=0;for(let e=0;e...
