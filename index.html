@@ -95,11 +95,21 @@
             text-decoration: none;
             font-size: 14px;
         }
-        #cusdis_thread { color: #e8e6e0 !important; }
-        .cusdis-textarea { background: #070b12cc !important; border:1px solid #3d4457 !important; color:#e8e6e0 !important; }
-        .cusdis-name-input::placeholder { content:"昵称 *（必填）" !important; color:#aaa; }
-        .cusdis-email-input::placeholder { content:"邮箱（选填，可不填）" !important; color:#aaa; }
-        .cusdis-textarea::placeholder { content:"写下你的留言 *（必填）" !important; color:#aaa; }
+        #cusdis_thread { color: #ffffff !important; }
+        .cusdis-textarea { 
+            background: #070b12cc !important; 
+            border:1px solid #3d4457 !important; 
+            color:#ffffff !important;
+            resize: vertical !important;
+            overflow-y: auto !important;
+        }
+        .cusdis-name-input,
+        .cusdis-email-input {
+            color: #ffffff !important;
+        }
+        .cusdis-name-input::placeholder { color:#ffffff !important; }
+        .cusdis-email-input::placeholder { color:#ffffff !important; }
+        .cusdis-textarea::placeholder { color:#ffffff !important; }
     </style>
 </head>
 <body>
